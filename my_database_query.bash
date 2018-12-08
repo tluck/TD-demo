@@ -10,6 +10,13 @@ my_sum="amount"
 else
 custom=1
 my_db=$1
+td database:show ${my_db} 
+if [[ $? != 0 ]]; 
+then 
+    printf "**** Error on accessing DB $my_db";
+    exit 1; 
+fi
+
 printf "Enter table name to query:"
 read my_table
 fi
@@ -21,18 +28,19 @@ then
     exit 1; 
 fi
 
-printf "\nUsing DB: $my_db to Query table: $my_table \n"
-printf "The query of value entered of column: $my_col \n and will calculate the count and sum of column: $my_sum \n\n"
+printf "\nUsing DB: $my_db to Query table: $my_table \n\n"
 
 if [[ $custom == 1 ]]
 then
-    printf "Enter table name to query: "
-    read my_table
-    printf "Enter column name to query: "
+    printf "Enter column name to sum results of query: "
+    read my_sum
+    printf "Enter column name for the query predicate: "
     read my_col
 fi
 
-td table:list $my_db > run.out
+printf "The query of value entered of column: $my_col \nand will calculate the count and sum of column: $my_sum \n\n"
+
+td table:list $my_db > run.txt
 if [[ $? != 0 ]]; 
 then 
     printf "**** Error on accessing table $my_db";  
@@ -43,8 +51,8 @@ then
 fi
 
 printf "Show table \n"
-td table:show $my_db $my_table > run.out
-cat run.out
+td table:show $my_db $my_table > run.txt
+cat run.txt
 
 printf "\nDetermining valid list items ... "
 td query -d ${my_db} -w  "select distinct($my_col) from ${my_table} " -o list.txt -f csv > run.txt
@@ -82,10 +90,10 @@ then
     output=query.txt
     test -e $output && rm $output
     printf "\nGetting cumulative data for $my_col=${my_query} ..."
-    td query -d ${my_db} -w -o $output "select count(${my_sum}) as sales, sum(${my_sum}) as revenue from ${my_table} where ${my_col}='${my_query}'" > run.out
-    if [[ $? != 0 ]]; then printf "**** Error running job\n"; cat run.out ; exit 1; fi
+    td query -d ${my_db} -w -o $output "select count(${my_sum}) as sales, sum(${my_sum}) as revenue from ${my_table} where ${my_col}='${my_query}'" > run.txt
+    if [[ $? != 0 ]]; then printf "**** Error running job\n"; cat run.txt ; exit 1; fi
     values=( $(cat $output) )
-    printf " For a total number of %d transactions, the Sales Revenue = $ %10.2f \n" ${values[*]}
+    printf " For a total number of %d transactions, the sum of the query column =  %10.2f \n" ${values[*]}
     queried=1
     break
 fi 

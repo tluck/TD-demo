@@ -1,8 +1,8 @@
-Job 380268547 is queued.
-Use 'td job:show 380268547' to show the status.
-  Hive history file=/mnt/hive/tmp/3867/hive_job_log_a1969f24-4e96-406a-a02e-5cba91b8f00a_1299992359.txt
+Job 380315067 is queued.
+Use 'td job:show 380315067' to show the status.
+  Hive history file=/mnt/hive/tmp/3867/hive_job_log_66c01996-016a-4439-81de-c13faf6dd074_844920396.txt
   Job is running in resource pool: hadoop2 with priority: default
-  Query ID = 3867_20181208205454_a29d91c7-56d9-4774-bfa8-4f26cdeb7b58
+  Query ID = 3867_20181208231111_3701ff43-1813-4707-bbb7-51b9b1d7710e
   Total jobs = 1
   Launching Job 1 out of 1
   Number of reduce tasks determined at compile time: 1
@@ -19,27 +19,27 @@ Use 'td job:show 380268547' to show the status.
   **   or rewrite the condition using TD_TIME_RANGE
   ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
   **
-  Starting Job = job_1542073809128_1929044, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_1929044/
-  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_1929044
+  Starting Job = job_1542073809128_1936985, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_1936985/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_1936985
   Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
-  2018-12-08 20:55:09,185 Stage-1 map = 0%,  reduce = 0%
-  2018-12-08 20:55:16,102 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 8.68 sec
-  2018-12-08 20:55:17,142 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 11.51 sec
-  MapReduce Total cumulative CPU time: 11 seconds 510 msec
-  Ended Job = job_1542073809128_1929044
+  2018-12-08 23:11:55,985 Stage-1 map = 0%,  reduce = 0%
+  2018-12-08 23:12:00,767 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 7.24 sec
+  2018-12-08 23:12:01,826 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 13.27 sec
+  MapReduce Total cumulative CPU time: 13 seconds 270 msec
+  Ended Job = job_1542073809128_1936985
   MapReduce Jobs Launched: 
-  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 11.51 sec   HDFS Read: 72280 HDFS Write: 480655 SUCCESS
-  Total MapReduce CPU Time Spent: 11 seconds 510 msec
+  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 13.27 sec   HDFS Read: 2784 HDFS Write: 483137 SUCCESS
+  Total MapReduce CPU Time Spent: 13 seconds 270 msec
   OK
-  Debug log = debug_380268547_1544302521817.gz
-  job_1542073809128_1929044: Uberized true
-  MapReduce time taken: 24.981 seconds
+  job_1542073809128_1936985: Uberized true
+  MapReduce time taken: 22.527 seconds
   Fetching results...
-  Total CPU Time: 11510
+  Total CPU Time: 13270
   Total Records: 1
-  Time taken: 25.914 seconds
+  Time taken: 23.458 seconds
+  Debug log = debug_380315067_1544310726324.gz
 Status      : success
 Result      :
 
-NOTE: the job result is being written to query_daterange.txt in tsv format: |=============================================================================================================================================|
-written to query_daterange.txt in tsv format                                                  
+NOTE: the job result is being written to query.txt in tsv format: |====================================================================================================================================|
+written to query.txt in tsv format                                                  
