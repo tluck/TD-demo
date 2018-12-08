@@ -6,8 +6,11 @@ my_table="sales_data"
 # create json file from csv file
 # require
 
-./csv2json_hash.bash ${mytable}.csv
+echo converting from CSV to JSON
+./csv2json_hash.bash ${my_table}.csv > ${my_table}.json
 
+
+echo Loading JSON to $my_db into $my_table
 # create table and import data from json file
   td apikey:set $TD_API_KEY
   td table:import evaluation_thomasluckenbach sales_data --auto-create-table --json sales_data.json 

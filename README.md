@@ -13,6 +13,16 @@ Treasure Data Sample Query on a Hive Table
 
 ## Install and Setup
 
+You will nedd tools for CSV and JSON file conversion
+```sh
+ gem install orderedhash
+ gem install csv2json
+```
+You will need to Download the TD Toolbelt (CLI)
+
+Treasure Data Toolbelt https://toolbelt.treasuredata.com/
+Installing: https://support.treasuredata.com/hc/en-us/articles/360001525887-Installing-and-Updating-the-Treasure-Data-CLI
+
 Install the python client
 
 ```sh
@@ -27,21 +37,14 @@ $ pip install certifi
 Clone this repo
 
 ```sh
-git clone git
+cd my_demo_location
+git clone https://github.com/tluck/TD-demo.git 
 ```
 
-sample data will be converted from CSV to JSON using a ruby tool called csv2json
-
-```sh
- gem install orderedhash
- gem install csv2json
-```
-
-Download the TD Toolbelt (CLI)
-Treasure Data Toolbelt https://toolbelt.treasuredata.com/
-Installing: https://support.treasuredata.com/hc/en-us/articles/360001525887-Installing-and-Updating-the-Treasure-Data-CLI
 
 ### Setup 
+Note:
+the sample data will be converted from CSV to JSON using a ruby tool called csv2json
 
 TreasureData API key will be read from environment variable `TD_API_KEY`, if none is given via arguments to `tdclient.Client`.
 Here is the link to retrieve your API key : http://docs.treasuredata.com/articles/get-apikey
@@ -49,11 +52,10 @@ Here is the link to retrieve your API key : http://docs.treasuredata.com/article
 
 ### Importing data
 
-
-Run this command to import the sample data to the sample database
+Run this command to import the sample data to the sample database - will create the sales_data table
 
 ```
-cd sample_data
+cd TD-Demo/sample_data
 ./my_database_load.bash
 ```
 
@@ -67,13 +69,26 @@ with tdclient.Client() as td:
 ```
 ### Query
 
-the sample query script runs a query to find the sum and count of column1 where column2=value
-for example column1 is the sales amount of a set of product_id listed on column2
+The sample query script runs a query to find the sum and count of column1 where column2=value
+
+For example column1 is the sales amount of a set of product_id listed on column2
+
 This demo will extract the total number sales and total sales revenue for a given product_id
 
+You can specify and alternate DB and table if desired.
+
+Defaults are:
+DB=evaluation_thomasluckenbach
+Table=sales_data
+Sum over column: amount
+where column: prod_id=value
+
 ```sh
-my_database_query.bash <db>
+cd TD-Demo
+./my_database_query.bash <db>
 ```
 
-enter a valid product ID like 13 or 121
+Then, enter a valid like 13 or 121
+
+Run and see the results!
 
