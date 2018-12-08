@@ -1,0 +1,45 @@
+Job 380268793 is queued.
+Use 'td job:show 380268793' to show the status.
+  Hive history file=/mnt/hive/tmp/3867/hive_job_log_aae41136-ef84-4e70-bc32-5eea0718cac9_555331367.txt
+  Job is running in resource pool: hadoop2 with priority: default
+  Query ID = 3867_20181208205555_9ccd4169-1883-4c34-b7df-f804ce7b09d5
+  Total jobs = 1
+  Launching Job 1 out of 1
+  Number of reduce tasks determined at compile time: 1
+  In order to change the average load for a reducer (in bytes):
+    set hive.exec.reducers.bytes.per.reducer=<number>
+  In order to limit the maximum number of reducers:
+    set hive.exec.reducers.max=<number>
+  In order to set a constant number of reducers:
+    set mapreduce.job.reduces=<number>
+  **
+  ** WARNING: time index filtering is not set on evaluation_thomasluckenbach.sales_data!
+  ** This query could be very slow as a result.
+  ** If you used 'unix_timestamp' please modify your query to use TD_SCHEDULED_TIME instead
+  **   or rewrite the condition using TD_TIME_RANGE
+  ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
+  **
+  Starting Job = job_1542073809128_1929076, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_1929076/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_1929076
+  Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+  2018-12-08 20:56:02,063 Stage-1 map = 0%,  reduce = 0%
+  2018-12-08 20:56:07,246 Stage-1 map = 51%,  reduce = 0%, Cumulative CPU 10.11 sec
+  2018-12-08 20:56:09,324 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 12.63 sec
+  MapReduce Total cumulative CPU time: 12 seconds 630 msec
+  Ended Job = job_1542073809128_1929076
+  MapReduce Jobs Launched: 
+  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 12.63 sec   HDFS Read: 72280 HDFS Write: 481833 SUCCESS
+  Total MapReduce CPU Time Spent: 12 seconds 630 msec
+  OK
+  job_1542073809128_1929076: Uberized true
+  MapReduce time taken: 20.513 seconds
+  Fetching results...
+  Total CPU Time: 12630
+  Total Records: 1
+  Time taken: 21.461 seconds
+  Debug log = debug_380268793_1544302572891.gz
+Status      : success
+Result      :
+
+NOTE: the job result is being written to query.txt in tsv format: |=======================================================================================================================================================|
+written to query.txt in tsv format                                                  

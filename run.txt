@@ -1,0 +1,45 @@
+Job 380268547 is queued.
+Use 'td job:show 380268547' to show the status.
+  Hive history file=/mnt/hive/tmp/3867/hive_job_log_a1969f24-4e96-406a-a02e-5cba91b8f00a_1299992359.txt
+  Job is running in resource pool: hadoop2 with priority: default
+  Query ID = 3867_20181208205454_a29d91c7-56d9-4774-bfa8-4f26cdeb7b58
+  Total jobs = 1
+  Launching Job 1 out of 1
+  Number of reduce tasks determined at compile time: 1
+  In order to change the average load for a reducer (in bytes):
+    set hive.exec.reducers.bytes.per.reducer=<number>
+  In order to limit the maximum number of reducers:
+    set hive.exec.reducers.max=<number>
+  In order to set a constant number of reducers:
+    set mapreduce.job.reduces=<number>
+  **
+  ** WARNING: time index filtering is not set on evaluation_thomasluckenbach.sales_data!
+  ** This query could be very slow as a result.
+  ** If you used 'unix_timestamp' please modify your query to use TD_SCHEDULED_TIME instead
+  **   or rewrite the condition using TD_TIME_RANGE
+  ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
+  **
+  Starting Job = job_1542073809128_1929044, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_1929044/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_1929044
+  Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+  2018-12-08 20:55:09,185 Stage-1 map = 0%,  reduce = 0%
+  2018-12-08 20:55:16,102 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 8.68 sec
+  2018-12-08 20:55:17,142 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 11.51 sec
+  MapReduce Total cumulative CPU time: 11 seconds 510 msec
+  Ended Job = job_1542073809128_1929044
+  MapReduce Jobs Launched: 
+  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 11.51 sec   HDFS Read: 72280 HDFS Write: 480655 SUCCESS
+  Total MapReduce CPU Time Spent: 11 seconds 510 msec
+  OK
+  Debug log = debug_380268547_1544302521817.gz
+  job_1542073809128_1929044: Uberized true
+  MapReduce time taken: 24.981 seconds
+  Fetching results...
+  Total CPU Time: 11510
+  Total Records: 1
+  Time taken: 25.914 seconds
+Status      : success
+Result      :
+
+NOTE: the job result is being written to query_daterange.txt in tsv format: |=============================================================================================================================================|
+written to query_daterange.txt in tsv format                                                  
