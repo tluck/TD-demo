@@ -13,7 +13,7 @@ Treasure Data Sample Query on a Hive Table
 
 ## Install and Setup
 
-You will nedd tools for CSV and JSON file conversion
+You will nead tools for CSV and JSON file conversion
 ```sh
  gem install orderedhash
  gem install csv2json
