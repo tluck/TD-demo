@@ -60,7 +60,7 @@ printf "Done\n"
 list=( $(cat list.txt) )
 
 output=query_daterange.txt
-printf "\nDetermine Time Range for table: $my_table ... "
+printf "\nDetermining Time Range for table: $my_table ... "
 td query -d ${my_db} -w -o $output "select from_unixtime(min(time)) as Min_Date, from_unixtime(max(time)) as Max_Date from ${my_table}" > run.txt
 printf "Done\n"
 if [[ $? != 0 ]]; then printf "**** Error running job\n"; cat run.txt ; exit 1; fi
@@ -93,7 +93,14 @@ then
     td query -d ${my_db} -w -o $output "select count(${my_sum}) as sales, sum(${my_sum}) as revenue from ${my_table} where ${my_col}='${my_query}'" > run.txt
     if [[ $? != 0 ]]; then printf "**** Error running job\n"; cat run.txt ; exit 1; fi
     values=( $(cat $output) )
-    printf " For a total number of %d transactions, the sum of the query column =  %10.2f \n" ${values[*]}
+    printf "\nFor a total number of %d transactions, the sum of the query column =  %10.2f \n" ${values[*]}
+    td query -d ${my_db} -w -o $output "select TD_TIME_FORMAT(time, 'yyyy-MM-dd', 'JST') AS day,\
+        COUNT(1), sum(amount) FROM sales_data\
+        WHERE ${my_col}='${my_query}'\
+        GROUP BY TD_TIME_FORMAT(time, 'yyyy-MM-dd', 'JST')\
+        ORDER BY day ASC" >run.out
+    if [[ $? != 0 ]]; then printf "**** Error running job\n"; cat run.txt ; exit 1; fi
+    cat $output
     queried=1
     break
 fi 

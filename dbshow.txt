@@ -1,7 +1,7 @@
 +---------------+------+--------+--------------------------------------------------------------------------------------+
 | Table         | Type | Count  | Schema                                                                               |
 +---------------+------+--------+--------------------------------------------------------------------------------------+
-| customer_data | log  | 0      | id:int, zip:long, phone:string, last:string, status:string, street:string, city:s... |
+| customer_data | log  | 10     | id:int, zip:long, phone:string, last:string, status:string, street:string, city:s... |
 | sales_data    | log  | 916039 | amount:double, promo_id:long, unit_cost:double, prod_id:long, quantity:long, date... |
 +---------------+------+--------+--------------------------------------------------------------------------------------+
 2 rows in set

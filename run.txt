@@ -1,8 +1,15 @@
-Job 380315067 is queued.
-Use 'td job:show 380315067' to show the status.
-  Hive history file=/mnt/hive/tmp/3867/hive_job_log_66c01996-016a-4439-81de-c13faf6dd074_844920396.txt
+Job 381355993 is queued.
+Use 'td job:show 381355993' to show the status.
+  Hive history file=/mnt/hive/tmp/3867/hive_job_log_ed527e8f-aac8-4e13-b6de-846c01fea87c_1609118804.txt
   Job is running in resource pool: hadoop2 with priority: default
-  Query ID = 3867_20181208231111_3701ff43-1813-4707-bbb7-51b9b1d7710e
+  **
+  ** WARNING: time index filtering is not set on evaluation_thomasluckenbach.sales_data!
+  ** This query could be very slow as a result.
+  ** If you used 'unix_timestamp' please modify your query to use TD_SCHEDULED_TIME instead
+  **   or rewrite the condition using TD_TIME_RANGE
+  ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
+  **
+  Query ID = 3867_20181211062424_62fd1c1c-b3e2-4fff-887e-bcfd9ab9f524
   Total jobs = 1
   Launching Job 1 out of 1
   Number of reduce tasks determined at compile time: 1
@@ -12,32 +19,24 @@ Use 'td job:show 380315067' to show the status.
     set hive.exec.reducers.max=<number>
   In order to set a constant number of reducers:
     set mapreduce.job.reduces=<number>
-  **
-  ** WARNING: time index filtering is not set on evaluation_thomasluckenbach.sales_data!
-  ** This query could be very slow as a result.
-  ** If you used 'unix_timestamp' please modify your query to use TD_SCHEDULED_TIME instead
-  **   or rewrite the condition using TD_TIME_RANGE
-  ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
-  **
-  Starting Job = job_1542073809128_1936985, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_1936985/
-  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_1936985
+  Starting Job = job_1542073809128_2110839, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_2110839/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_2110839
   Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
-  2018-12-08 23:11:55,985 Stage-1 map = 0%,  reduce = 0%
-  2018-12-08 23:12:00,767 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 7.24 sec
-  2018-12-08 23:12:01,826 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 13.27 sec
-  MapReduce Total cumulative CPU time: 13 seconds 270 msec
-  Ended Job = job_1542073809128_1936985
+  2018-12-11 06:25:08,805 Stage-1 map = 0%,  reduce = 0%
+  2018-12-11 06:25:15,254 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 10.58 sec
+  MapReduce Total cumulative CPU time: 10 seconds 580 msec
+  Ended Job = job_1542073809128_2110839
   MapReduce Jobs Launched: 
-  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 13.27 sec   HDFS Read: 2784 HDFS Write: 483137 SUCCESS
-  Total MapReduce CPU Time Spent: 13 seconds 270 msec
+  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 10.58 sec   HDFS Read: 72280 HDFS Write: 483183 SUCCESS
+  Total MapReduce CPU Time Spent: 10 seconds 580 msec
   OK
-  job_1542073809128_1936985: Uberized true
-  MapReduce time taken: 22.527 seconds
+  job_1542073809128_2110839: Uberized true
+  MapReduce time taken: 18.53 seconds
   Fetching results...
-  Total CPU Time: 13270
+  Total CPU Time: 10580
   Total Records: 1
-  Time taken: 23.458 seconds
-  Debug log = debug_380315067_1544310726324.gz
+  Time taken: 19.495 seconds
+  Debug log = debug_381355993_1544509520512.gz
 Status      : success
 Result      :
 

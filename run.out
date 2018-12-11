@@ -1,0 +1,61 @@
+Job 381356197 is queued.
+Use 'td job:show 381356197' to show the status.
+  Hive history file=/mnt/hive/tmp/3867/hive_job_log_312d30a1-01b6-4e99-a208-5f51e4b53592_1284570397.txt
+  Job is running in resource pool: hadoop2 with priority: default
+  evaluation_thomasluckenbach.sales_data Total Splits length: 4,720,189
+  **
+  ** WARNING: time index filtering is not set on evaluation_thomasluckenbach.sales_data!
+  ** This query could be very slow as a result.
+  ** If you used 'unix_timestamp' please modify your query to use TD_SCHEDULED_TIME instead
+  **   or rewrite the condition using TD_TIME_RANGE
+  ** Please see http://docs.treasure-data.com/articles/performance-tuning#leveraging-time-based-partitioning
+  **
+  Query ID = 3867_20181211062525_515b849c-97f0-4207-a86c-95b901ae075c
+  Total jobs = 2
+  Launching Job 1 out of 2
+  Number of reduce tasks not specified. Estimated from input data size: 1
+  In order to change the average load for a reducer (in bytes):
+    set hive.exec.reducers.bytes.per.reducer=<number>
+  In order to limit the maximum number of reducers:
+    set hive.exec.reducers.max=<number>
+  In order to set a constant number of reducers:
+    set mapreduce.job.reduces=<number>
+  Starting Job = job_1542073809128_2110862, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_2110862/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_2110862
+  Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+  2018-12-11 06:25:41,680 Stage-1 map = 0%,  reduce = 0%
+  2018-12-11 06:25:45,986 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 10.84 sec
+  MapReduce Total cumulative CPU time: 10 seconds 840 msec
+  Ended Job = job_1542073809128_2110862
+  Launching Job 2 out of 2
+  Number of reduce tasks determined at compile time: 1
+  In order to change the average load for a reducer (in bytes):
+    set hive.exec.reducers.bytes.per.reducer=<number>
+  In order to limit the maximum number of reducers:
+    set hive.exec.reducers.max=<number>
+  In order to set a constant number of reducers:
+    set mapreduce.job.reduces=<number>
+  Starting Job = job_1542073809128_2110873, Tracking URL = http://ip-172-18-185-59.ec2.internal:8088/proxy/application_1542073809128_2110873/
+  Kill Command = /usr/local/hadoop//bin/hadoop job  -kill job_1542073809128_2110873
+  Hadoop job information for Stage-2: number of mappers: 1; number of reducers: 1
+  2018-12-11 06:25:55,242 Stage-2 map = 100%,  reduce = 100%, Cumulative CPU 2.47 sec
+  MapReduce Total cumulative CPU time: 2 seconds 470 msec
+  Ended Job = job_1542073809128_2110873
+  Debug log = debug_381356197_1544509561442.gz
+  MapReduce Jobs Launched: 
+  Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 10.84 sec   HDFS Read: 72280 HDFS Write: 484138 SUCCESS
+  Stage-Stage-2: Map: 1  Reduce: 1   Cumulative CPU: 2.47 sec   HDFS Read: 1456 HDFS Write: 481098 SUCCESS
+  Total MapReduce CPU Time Spent: 13 seconds 310 msec
+  OK
+  job_1542073809128_2110862: Uberized true
+  job_1542073809128_2110873: Uberized true
+  MapReduce time taken: 27.304 seconds
+  Fetching results...
+  Total CPU Time: 13310
+  Total Records: 2
+  Time taken: 28.344 seconds
+Status      : success
+Result      :
+
+NOTE: the job result is being written to query.txt in tsv format: |====================================================================================================================================|
+written to query.txt in tsv format                                                  
